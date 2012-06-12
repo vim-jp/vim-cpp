@@ -33,6 +33,14 @@ syn keyword cppStructure	class typename template namespace
 syn keyword cppNumber		NPOS
 syn keyword cppBoolean		true false
 
+if !exists("cpp_no_cpp0x") " ISO C++11
+  syn keyword cppOperator	alignof alignas
+  syn keyword cppType		char16_t char32_t decltype
+  syn keyword cppStorageClass	constexpr thread_local
+  syn keyword cppConstant	nullptr
+  syn keyword cppStatement	static_assert final override noexcept
+endif
+
 " The minimum and maximum operators in GNU C++
 syn match cppMinMax "[<>]?"
 
@@ -54,6 +62,7 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppStructure		Structure
   HiLink cppNumber		Number
   HiLink cppBoolean		Boolean
+  HiLink cppConstant		Constant
   delcommand HiLink
 endif
 
