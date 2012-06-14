@@ -1,7 +1,7 @@
 # cpp-vim
 
-This is vim synatx files supported C++0x / C+11.
-`c.vim` is based on Bram Moolenaar <Bram@vim.org>. And `cpp.vim` is based on Ken Shan <ccshan@post.harvard.edu>.
+This is Vim syntax files with C++11 support. `c.vim` is based on Bram Moolenaar
+<Bram@vim.org> and `cpp.vim` is based on Ken Shan <ccshan@post.harvard.edu>.
 
 ## License
 
