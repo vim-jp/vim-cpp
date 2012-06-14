@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	C++
-" Maintainer:	Ken Shan <ccshan@post.harvard.edu>
-" Last Change:	2002 Jul 15
+" Maintainer:	??? ??? ??? ???
+" Last Change:	2012 Jun 14
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -19,7 +19,7 @@ else
   unlet b:current_syntax
 endif
 
-" C++ extentions
+" C++ extensions
 syn keyword cppStatement	new delete this friend using
 syn keyword cppAccess		public protected private
 syn keyword cppType		inline virtual explicit export bool wchar_t
@@ -30,15 +30,14 @@ syn match cppCast		"\<\(const\|static\|dynamic\|reinterpret\)_cast\s*<"me=e-1
 syn match cppCast		"\<\(const\|static\|dynamic\|reinterpret\)_cast\s*$"
 syn keyword cppStorageClass	mutable
 syn keyword cppStructure	class typename template namespace
-syn keyword cppNumber		NPOS
 syn keyword cppBoolean		true false
 
-if !exists("cpp_no_cpp0x") " ISO C++11
-  syn keyword cppOperator	alignof alignas
-  syn keyword cppType		char16_t char32_t decltype
-  syn keyword cppStorageClass	constexpr thread_local
+" C++ 11 extensions
+if !exists("cpp_no_cpp11")
+  syn keyword cppType		override final
+  syn keyword cppExceptions	noexcept
+  syn keyword cppStorageClass	constexpr decltype
   syn keyword cppConstant	nullptr
-  syn keyword cppStatement	static_assert final override noexcept
 endif
 
 " The minimum and maximum operators in GNU C++
@@ -60,7 +59,6 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppType		Type
   HiLink cppStorageClass	StorageClass
   HiLink cppStructure		Structure
-  HiLink cppNumber		Number
   HiLink cppBoolean		Boolean
   HiLink cppConstant		Constant
   delcommand HiLink
