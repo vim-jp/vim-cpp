@@ -125,7 +125,7 @@ else
   syn region	cCppParen	transparent start='(' skip='\\$' excludenl end=')' end='$' contained contains=ALLBUT,@cParenGroup,cErrInBracket,cParen,cBracket,cString,@Spell
   syn match	cParenError	display "[\])]"
   if &filetype == 'cpp' && !exists("cpp_no_cpp11")
-  syn match	cErrInParen	display contained "[\]]\|<%\|%>"
+    syn match	cErrInParen	display contained "[\]]\|<%\|%>"
   else
     syn match	cErrInParen	display contained "[\]{}]\|<%\|%>"
   endif
