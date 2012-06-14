@@ -1,6 +1,7 @@
 " Vim syntax file
 " Language:	C++
-" Maintainer:	??? ??? ??? ???
+" Current Maintainer:	vim-jp (https://github.com/vim-jp/cpp-vim)
+" Previous Maintainer:	Ken Shan <ccshan@post.harvard.edu>
 " Last Change:	2012 Jun 14
 
 " For version 5.x: Clear all syntax items
