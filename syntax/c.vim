@@ -124,7 +124,7 @@ else
   " cCppParen: same as cParen but ends at end-of-line; used in cDefine
   syn region	cCppParen	transparent start='(' skip='\\$' excludenl end=')' end='$' contained contains=ALLBUT,@cParenGroup,cErrInBracket,cParen,cBracket,cString,@Spell
   syn match	cParenError	display "[\])]"
-  if &filetype == 'cpp' && !exists("cpp_no_cpp11")
+  if &filetype ==# 'cpp' && !exists("cpp_no_cpp11")
     syn match	cErrInParen	display contained "[\]]\|<%\|%>"
   else
     syn match	cErrInParen	display contained "[\]{}]\|<%\|%>"
@@ -135,7 +135,7 @@ else
   syn match	cErrInBracket	display contained "[);{}]\|<%\|%>"
 endif
 
-if &filetype == 'cpp' && !exists("cpp_no_cpp11")
+if &filetype ==# 'cpp' && !exists("cpp_no_cpp11")
   syntax region	cBadBlock		start="{" end="}" transparent fold
 else
   syntax region	cBadBlock	keepend start="{" end="}" contained containedin=cParen,cBracket,cBadBlock transparent fold
