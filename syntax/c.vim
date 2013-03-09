@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	C
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2012 Jun 14
+" Last Change:	2013 Mar 07
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -99,16 +99,16 @@ endif
 
 " This should be before cErrInParen to avoid problems with #define ({ xxx })
 if exists("c_curly_error")
-  syntax match cCurlyError "}"
-  syntax region	cBlock		start="{" end="}" contains=ALLBUT,cCurlyError,@cParenGroup,cErrInParen,cCppParen,cErrInBracket,cCppBracket,cCppString,@Spell fold
+  syn match cCurlyError "}"
+  syn region	cBlock		start="{" end="}" contains=ALLBUT,cBadBlock,cCurlyError,@cParenGroup,cErrInParen,cCppParen,cErrInBracket,cCppBracket,cCppString,@Spell fold
 else
-  syntax region	cBlock		start="{" end="}" transparent fold
+  syn region	cBlock		start="{" end="}" transparent fold
 endif
 
 "catch errors caused by wrong parenthesis and brackets
 " also accept <% for {, %> for }, <: for [ and :> for ] (C99)
 " But avoid matching <::.
-syn cluster	cParenGroup	contains=cParenError,cIncluded,cSpecial,cCommentSkip,cCommentString,cComment2String,@cCommentGroup,cCommentStartError,cUserCont,cUserLabel,cBitField,cOctalZero,@cCppOutInGroup,cFormat,cNumber,cFloat,cOctal,cOctalError,cNumbersCom
+syn cluster	cParenGroup	contains=cParenError,cIncluded,cSpecial,cCommentSkip,cCommentString,cComment2String,@cCommentGroup,cCommentStartError,cUserLabel,cBitField,cOctalZero,@cCppOutInGroup,cFormat,cNumber,cFloat,cOctal,cOctalError,cNumbersCom
 if exists("c_no_curly_error")
   if &filetype ==# 'cpp' && !exists("cpp_no_cpp11")
     syn region	cParen		transparent start='(' end=')' contains=ALLBUT,@cParenGroup,cCppParen,cCppString,@Spell
@@ -159,7 +159,7 @@ else
 endif
 
 if &filetype ==# 'c' || exists("cpp_no_cpp11")
-  syntax region	cBadBlock	keepend start="{" end="}" contained containedin=cParen,cBracket,cBadBlock transparent fold
+  syn region	cBadBlock	keepend start="{" end="}" contained containedin=cParen,cBracket,cBadBlock transparent fold
 endif
 
 "integer number, or floating point number without a dot and with "f".
@@ -197,16 +197,16 @@ if exists("c_comment_strings")
   " need to use a special type of cString: cCommentString, which also ends on
   " "*/", and sees a "*" at the start of the line as comment again.
   " Unfortunately this doesn't very well work for // type of comments :-(
-  syntax match	cCommentSkip	contained "^\s*\*\($\|\s\+\)"
-  syntax region cCommentString	contained start=+L\=\\\@<!"+ skip=+\\\\\|\\"+ end=+"+ end=+\*/+me=s-1 contains=cSpecial,cCommentSkip
-  syntax region cComment2String	contained start=+L\=\\\@<!"+ skip=+\\\\\|\\"+ end=+"+ end="$" contains=cSpecial
-  syntax region  cCommentL	start="//" skip="\\$" end="$" keepend contains=@cCommentGroup,cComment2String,cCharacter,cNumbersCom,cSpaceError,@Spell
+  syn match	cCommentSkip	contained "^\s*\*\($\|\s\+\)"
+  syn region cCommentString	contained start=+L\=\\\@<!"+ skip=+\\\\\|\\"+ end=+"+ end=+\*/+me=s-1 contains=cSpecial,cCommentSkip
+  syn region cComment2String	contained start=+L\=\\\@<!"+ skip=+\\\\\|\\"+ end=+"+ end="$" contains=cSpecial
+  syn region  cCommentL	start="//" skip="\\$" end="$" keepend contains=@cCommentGroup,cComment2String,cCharacter,cNumbersCom,cSpaceError,@Spell
   if exists("c_no_comment_fold")
     " Use "extend" here to have preprocessor lines not terminate halfway a
     " comment.
-    syntax region cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cCommentString,cCharacter,cNumbersCom,cSpaceError,@Spell extend
+    syn region cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cCommentString,cCharacter,cNumbersCom,cSpaceError,@Spell extend
   else
-    syntax region cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cCommentString,cCharacter,cNumbersCom,cSpaceError,@Spell fold extend
+    syn region cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=@cCommentGroup,cCommentStartError,cCommentString,cCharacter,cNumbersCom,cSpaceError,@Spell fold extend
   endif
 else
   syn region	cCommentL	start="//" skip="\\$" end="$" keepend contains=@cCommentGroup,cSpaceError,@Spell
@@ -217,8 +217,8 @@ else
   endif
 endif
 " keep a // comment separately, it terminates a preproc. conditional
-syntax match	cCommentError	display "\*/"
-syntax match	cCommentStartError display "/\*"me=e-1 contained
+syn match	cCommentError	display "\*/"
+syn match	cCommentStartError display "/\*"me=e-1 contained
 
 syn keyword	cOperator	sizeof
 if exists("c_gnu")
