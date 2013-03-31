@@ -38,7 +38,7 @@ syn keyword cppConstant		__cplusplus
 if !exists("cpp_no_cpp11")
   syn keyword cppType		override final
   syn keyword cppExceptions	noexcept
-  syn keyword cppStorageClass	constexpr decltype
+  syn keyword cppStorageClass	constexpr decltype thread_local
   syn keyword cppConstant	nullptr
 endif
 
