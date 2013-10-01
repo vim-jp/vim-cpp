@@ -39,9 +39,9 @@ if !exists("cpp_no_cpp11")
   syn keyword cppExceptions	noexcept
   syn keyword cppStorageClass	constexpr decltype
   syn keyword cppConstant	nullptr
-  " A raw-string looks like R"d(...)d" where d is a (possibly empty) sequence of
-  " A-Z a-z 0-9 _ { } [ ] # < > % : ; . ? * + - / ^ & | ~ ! = , " '
-  syn region cppRawString  matchgroup=cppRawDelim start=+R"\z([[:alnum:]_{}[\]#<>%:;.?*+\-/\^&|~!=,"']*\)(+ end=+)\z1"+ contains=@Spell
+  " A C++11 raw-string literal. It tries to follow 2.14.5 and 2.14.5.2 of the
+  " standard.
+  syn region cppRawString matchgroup=cppRawDelim start=+\%(u8\=\|[LU]\)\=R"\z(\%([ ()\\\d9-\d12]\@![\d0-\d127]\)\{,16}\)(+ end=+)\z1"+ contains=@Spell
 endif
 
 " The minimum and maximum operators in GNU C++
