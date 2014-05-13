@@ -39,7 +39,7 @@ if !exists("cpp_no_cpp11")
   syn keyword cppExceptions	noexcept
   syn keyword cppStorageClass	constexpr decltype
   syn keyword cppConstant	nullptr
-  syn region cppRawString matchgroup=cppRawDelimiter                          
+  syn region cppRawString       matchgroup=cppRawDelimiter
     \ start=+\%(u8\|[uLU]\)\=R"\z([[:alnum:]_{}[\]#<>%:;.?*\+\-/\^&|~!=,"']\{,16}\)(+
     \ end=+)\z1"+ contains=@Spell
 endif
