@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:	C++
-" Current Maintainer:	vim-jp (https://github.com/vim-jp/vim-cpp)
+" Current Maintainer:	vim-jp (https://github.com/vim-jp/cpp-vim)
 " Previous Maintainer:	Ken Shan <ccshan@post.harvard.edu>
-" Last Change:	2014 May 13
+" Last Change:	2014 May 14
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
