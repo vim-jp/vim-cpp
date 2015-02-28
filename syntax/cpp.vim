@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:	C++
-" Current Maintainer:	vim-jp (https://github.com/vim-jp/cpp-vim)
+" Current Maintainer:	vim-jp (https://github.com/vim-jp/vim-cpp)
 " Previous Maintainer:	Ken Shan <ccshan@post.harvard.edu>
 " Last Change:	2014 May 13
 
