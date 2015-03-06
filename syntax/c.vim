@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	C
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2015 Mar 1
+" Last Change:	2015 Mar 05
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -335,6 +335,8 @@ if !exists("c_no_ansi") || exists("c_ansi_constants") || exists("c_gnu")
   " POSIX 2001
   syn keyword cConstant SIGBUS SIGPOLL SIGPROF SIGSYS SIGURG
   syn keyword cConstant SIGVTALRM SIGXCPU SIGXFSZ
+  " non-POSIX signals
+  syn keyword cConstant SIGWINCH SIGINFO
   " Add POSIX errors as well
   syn keyword cConstant E2BIG EACCES EAGAIN EBADF EBADMSG EBUSY
   syn keyword cConstant ECANCELED ECHILD EDEADLK EDOM EEXIST EFAULT
