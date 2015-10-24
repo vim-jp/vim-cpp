@@ -3,6 +3,8 @@
 This is Vim syntax files with C++11 support. `c.vim` is based on Bram Moolenaar
 <Bram@vim.org> and `cpp.vim` is based on Ken Shan <ccshan@post.harvard.edu>.
 
+This plugin contributes to [vim-polyglot](https://github.com/sheerun/vim-polyglot) language pack.
+
 ## License
 
 License of original files conform to author of them. Enhancement of changes
