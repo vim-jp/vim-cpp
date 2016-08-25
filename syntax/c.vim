@@ -182,11 +182,6 @@ syn match	cNumbersCom	display contained transparent "\<\d\|\.\d" contains=cNumbe
 syn match	cNumber		display contained "\d\+\(u\=l\{0,2}\|ll\=u\)\>"
 "hex number
 syn match	cNumber		display contained "0x\x\+\(u\=l\{0,2}\|ll\=u\)\>"
-if s:ft ==# 'cpp' && !exists("cpp_no_cpp14")
-  syn match	cNumber		display contained "\d\('\=\d\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
-  syn match	cNumber		display contained "0x\x\('\=\x\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
-  syn match	cNumber		display contained "0b[01]\('\=[01]\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
-endif
 " Flag the first zero of an octal number as something special
 syn match	cOctal		display contained "0\o\+\(u\=l\{0,2}\|ll\=u\)\>" contains=cOctalZero
 syn match	cOctalZero	display contained "\<0"
