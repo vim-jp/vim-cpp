@@ -37,8 +37,8 @@ syn keyword cppConstant		__cplusplus
 
 " C++ 11 extensions
 if !exists("cpp_no_cpp11")
-  syn keyword cppModifier	override final auto
-  syn keyword cppType		nullptr_t
+  syn keyword cppModifier	override final
+  syn keyword cppType		nullptr_t auto
   syn keyword cppExceptions	noexcept
   syn keyword cppStorageClass	constexpr decltype thread_local
   syn keyword cppConstant	nullptr
@@ -53,7 +53,11 @@ endif
 
 " C++ 14 extensions
 if !exists("cpp_no_cpp14")
-  syn match cppNumber		display "\<0b[01]\+\(u\=l\{0,2}\|ll\=u\)\>"
+  syn case ignore
+  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
+  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
+  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
+  syn case match
 endif
 
 " The minimum and maximum operators in GNU C++
