@@ -401,8 +401,8 @@ if s:ft ==# 'c' || exists("cpp_no_cpp11")
 endif
 " Avoid matching foo::bar() in C++ by requiring that the next char is not ':'
 syn cluster	cLabelGroup	contains=cUserLabel
-syn match	cUserCont	display "^\s*\I\i*\s*:$" contains=@cLabelGroup
-syn match	cUserCont	display ";\s*\I\i*\s*:$" contains=@cLabelGroup
+syn match	cUserCont	display "^\s*\zs\I\i*\s*:$" contains=@cLabelGroup
+syn match	cUserCont	display ";\s*\zs\I\i*\s*:$" contains=@cLabelGroup
 if s:ft ==# 'cpp'
   syn match	cUserCont	display "^\s*\%(class\|struct\|enum\)\@!\I\i*\s*:[^:]"me=e-1 contains=@cLabelGroup
   syn match	cUserCont	display ";\s*\%(class\|struct\|enum\)\@!\I\i*\s*:[^:]"me=e-1 contains=@cLabelGroup
