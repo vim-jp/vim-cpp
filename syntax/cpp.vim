@@ -50,6 +50,12 @@ if !exists("cpp_no_cpp14")
   syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
   syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
   syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
+  syn match cppChronoLiteralsDecimal	display "\<[1-9]\d*\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsFloat	display "\<\d\+\.\d*[eE]\=[\-+]\=\d\+\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsFloat	display "\.\d\+\([eE][\-+]\=\d\+\)\=\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsBinary	display "\<0b[01]\('\=[01]\+\)*\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsHexa	display "\<0x\x\('\=\x\+\)*\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsOctal	display "\<0\o\+\(h\|min\|s\|ms\|us\|ns\)\>"
   syn case match
 endif
 
@@ -71,6 +77,12 @@ hi def link cppConstant		Constant
 hi def link cppRawStringDelimiter	Delimiter
 hi def link cppRawString		String
 hi def link cppNumber		Number
+hi def link cppChronoLiteralsDecimal	Number
+hi def link cppChronoLiteralsFloat	Number
+hi def link cppChronoLiteralsFloat	Number
+hi def link cppChronoLiteralsBinary	Number
+hi def link cppChronoLiteralsHexa	Number
+hi def link cppChronoLiteralsOctal	Number
 
 let b:current_syntax = "cpp"
 
