@@ -55,7 +55,7 @@ if !exists("cpp_no_cpp14")
   syn match cppChronoLiteralsFloat	display "\.\d\+\([eE][\-+]\=\d\+\)\=\(h\|min\|s\|ms\|us\|ns\)\>"
   syn match cppChronoLiteralsBinary	display "\<0b[01]\('\=[01]\+\)*\(h\|min\|s\|ms\|us\|ns\)\>"
   syn match cppChronoLiteralsHexa	display "\<0x\x\('\=\x\+\)*\(h\|min\|s\|ms\|us\|ns\)\>"
-  syn match cppChronoLiteralsOctal	display "\<0\o\+\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsOctal	display "\<0\o\+\(h\|min\|s\|ms\|us\|ns\)\>" contains=cOctalZero
   syn case match
 endif
 
