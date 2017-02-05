@@ -50,7 +50,7 @@ if !exists("cpp_no_cpp14")
   syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
   syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
   syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(u\=l\{0,2}\|ll\=u\)\>"
-  syn match cppChronoLiteralsDecimal	display "\<[1-9]\d*\(h\|min\|s\|ms\|us\|ns\)\>"
+  syn match cppChronoLiteralsDecimal	display "\(\<0\|\<[1-9]\d*\)\(h\|min\|s\|ms\|us\|ns\)\>"
   syn match cppChronoLiteralsFloat	display "\<\d\+\.\d*[eE]\=[\-+]\=\d\+\(h\|min\|s\|ms\|us\|ns\)\>"
   syn match cppChronoLiteralsFloat	display "\.\d\+\([eE][\-+]\=\d\+\)\=\(h\|min\|s\|ms\|us\|ns\)\>"
   syn match cppChronoLiteralsBinary	display "\<0b[01]\('\=[01]\+\)*\(h\|min\|s\|ms\|us\|ns\)\>"
