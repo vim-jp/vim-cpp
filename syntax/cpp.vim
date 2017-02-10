@@ -79,7 +79,6 @@ hi def link cppRawString		String
 hi def link cppNumber		Number
 hi def link cppChronoLiteralsDecimal	Number
 hi def link cppChronoLiteralsFloat	Number
-hi def link cppChronoLiteralsFloat	Number
 hi def link cppChronoLiteralsBinary	Number
 hi def link cppChronoLiteralsHexa	Number
 hi def link cppChronoLiteralsOctal	Number
