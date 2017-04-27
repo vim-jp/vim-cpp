@@ -16,7 +16,7 @@ unlet b:current_syntax
 " C++ extensions
 syn keyword cppStatement	new delete this friend using
 syn keyword cppAccess		public protected private
-syn keyword cppModifier		inline virtual explicit export
+syn keyword cppModifier		inline virtual explicit export restrict
 syn keyword cppType		bool wchar_t
 syn keyword cppExceptions	throw try catch
 syn keyword cppOperator		operator typeid
