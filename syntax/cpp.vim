@@ -2,7 +2,6 @@
 " Language:	C++
 " Current Maintainer:	vim-jp (https://github.com/vim-jp/vim-cpp)
 " Previous Maintainer:	Ken Shan <ccshan@post.harvard.edu>
-" Last Change:	2016 Oct 28
 
 " quit when a syntax file was already loaded
 if exists("b:current_syntax")
