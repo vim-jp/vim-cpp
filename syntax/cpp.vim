@@ -2,7 +2,7 @@
 " Language:	C++
 " Current Maintainer:	vim-jp (https://github.com/vim-jp/vim-cpp)
 " Previous Maintainer:	Ken Shan <ccshan@post.harvard.edu>
-" Last Change:	2017 Jun 05
+" Last Change:	2021 Jan 12
 
 " quit when a syntax file was already loaded
 if exists("b:current_syntax")
@@ -58,12 +58,6 @@ if !exists("cpp_no_cpp14")
   syn case match
 endif
 
-" C++ 17 extensions
-if !exists("cpp_no_cpp17")
-  syn match cppCast		"\<reinterpret_pointer_cast\s*<"me=e-1
-  syn match cppCast		"\<reinterpret_pointer_cast\s*$"
-endif
-
 " C++ 20 extensions
 if !exists("cpp_no_cpp20")
   syn keyword cppStatement	co_await co_return co_yield requires
@@ -71,6 +65,12 @@ if !exists("cpp_no_cpp20")
   syn keyword cppStructure	concept
   syn keyword cppType		char8_t
   syn keyword cppModule		import module export
+endif
+
+" C++ 17 extensions
+if !exists("cpp_no_cpp17")
+  syn match cppCast		"\<reinterpret_pointer_cast\s*<"me=e-1
+  syn match cppCast		"\<reinterpret_pointer_cast\s*$"
 endif
 
 " The minimum and maximum operators in GNU C++
