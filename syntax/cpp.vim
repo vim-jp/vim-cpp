@@ -56,6 +56,8 @@ if !exists("cpp_no_cpp14")
   syn match cppFloat		display contained "\<\.\d\+\(e[-+]\=\d\+\)\=\([fl]\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
   syn match cppFloat		display contained "\<\d\+e[-+]\=\d\+\([fl]\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
   syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppNumber		display "\<0\o\+\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppNumber		display "\<0\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
   syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>" contains=cppFloat
   syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
   syn region cppString		start=+\(L\|u\|u8\|U\|R\|LR\|u8R\|uR\|UR\)\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"\(sv\|s\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=+ end='$' contains=cSpecial,cFormat,@Spell
@@ -65,6 +67,8 @@ endif
 " C++ 20 extensions
 if !exists("cpp_no_cpp20")
   syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(y\|d\)\>"
+  syn match cppNumber		display "\<0\o\+\(y\|d\)\>"
+  syn match cppNumber		display "\<0\(y\|d\)\>"
   syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(y\|d\)\>"
   syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(y\|d\)\>"
   syn keyword cppStatement	co_await co_return co_yield requires
