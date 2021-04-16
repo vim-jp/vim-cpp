@@ -51,17 +51,15 @@ endif
 
 " C++ 14 extensions
 if !exists("cpp_no_cpp14")
-  syn case ignore
-  syn match cppFloat		display contained "\<\d\+\.\d*\(e[-+]\=\d\+\)\=\([fl]\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
-  syn match cppFloat		display contained "\<\.\d\+\(e[-+]\=\d\+\)\=\([fl]\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
-  syn match cppFloat		display contained "\<\d\+e[-+]\=\d\+\([fl]\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
-  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
-  syn match cppNumber		display "\<0\o\+\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
-  syn match cppNumber		display "\<0\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
-  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>" contains=cppFloat
-  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(u\=ll\=\|ll\=u\|if\|il\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppFloat		display contained "\<\d\+\.\d*\(e[-+]\=\d\+\)\=\([FLfl]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppFloat		display contained "\<\.\d\+\(e[-+]\=\d\+\)\=\([FLfl]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppFloat		display contained "\<\d\+e[-+]\=\d\+\([FLfl]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppNumber		display "\<0\o\+\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppNumber		display "\<0\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
+  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>" contains=cppFloat
+  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[Ff]\|i[Ll]\|i\|h\|min\|s\|ms\|us\|ns\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=\>"
   syn region cppString		start=+\(L\|u\|u8\|U\|R\|LR\|u8R\|uR\|UR\)\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"\(sv\|s\|_[_a-zA-Z][_a-zA-Z0-9]*\)\=+ end='$' contains=cSpecial,cFormat,@Spell
-  syn case match
 endif
 
 " C++ 20 extensions
