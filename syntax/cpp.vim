@@ -54,11 +54,11 @@ if !exists("cpp_no_cpp14")
   syn match cppFloat		display contained "\<\d\+\.\d*\(e[-+]\=\d\+\)\=\(i\=[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\.\d\+\(e[-+]\=\d\+\)\=\(i\=[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\d\+e[-+]\=\d\+\(i\=[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<0\o\+\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<0\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>" contains=cppFloat
-  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display "\<0\o\+\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display "\<0\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>" contains=cppFloat
+  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[FfLl]\|i\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn region cppString		start=+\(L\|u\|u8\|U\|R\|LR\|u8R\|uR\|UR\)\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"\(sv\|s\|_\i*\)\=+ end='$' contains=cSpecial,cFormat,@Spell
 endif
 
