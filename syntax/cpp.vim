@@ -2,7 +2,7 @@
 " Language:	C++
 " Current Maintainer:	vim-jp (https://github.com/vim-jp/vim-cpp)
 " Previous Maintainer:	Ken Shan <ccshan@post.harvard.edu>
-" Last Change:	2021 Apr 17
+" Last Change:	2021 May 04
 
 " quit when a syntax file was already loaded
 if exists("b:current_syntax")
@@ -51,24 +51,25 @@ endif
 
 " C++ 14 extensions
 if !exists("cpp_no_cpp14")
+  syn match cppNumbers		display transparent "\<\d\|\.\d" contains=cppNumber,cppFloat
+  syn match cppNumber		display contained "\<0\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display contained "\<[1-9]\('\=\d\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display contained "\<0\o\+\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display contained "\<0b[01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display contained "\<0x\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\d\+\.\d*\(e[-+]\=\d\+\)\=\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\.\d\+\(e[-+]\=\d\+\)\=\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\d\+e[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<0\o\+\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<0\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>" contains=cppFloat
-  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn region cppString		start=+\(L\|u\|u8\|U\|R\|LR\|u8R\|uR\|UR\)\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"\(sv\|s\|_\i*\)\=+ end='$' contains=cSpecial,cFormat,@Spell
 endif
 
 " C++ 20 extensions
 if !exists("cpp_no_cpp20")
-  syn match cppNumber		display "\<0b[01]\('\=[01]\+\)*\(y\|d\)\>"
-  syn match cppNumber		display "\<0\o\+\(y\|d\)\>"
-  syn match cppNumber		display "\<0\(y\|d\)\>"
-  syn match cppNumber		display "\<[1-9]\('\=\d\+\)*\(y\|d\)\>"
-  syn match cppNumber		display "\<0x\x\('\=\x\+\)*\(y\|d\)\>"
+  syn match cppNumber		display contained "\<0\(y\|d\)\>"
+  syn match cppNumber		display contained "\<[1-9]\('\=\d\+\)*\(y\|d\)\>"
+  syn match cppNumber		display contained "\<0\o\+\(y\|d\)\>"
+  syn match cppNumber		display contained "\<0b[01]\('\=[01]\+\)*\(y\|d\)\>"
+  syn match cppNumber		display contained "\<0x\x\('\=\x\+\)*\(y\|d\)\>"
   syn keyword cppStatement	co_await co_return co_yield requires
   syn keyword cppStorageClass	consteval constinit
   syn keyword cppStructure	concept
