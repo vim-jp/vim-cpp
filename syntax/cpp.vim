@@ -63,6 +63,14 @@ if !exists("cpp_no_cpp14")
   syn region cppString		start=+\(L\|u\|u8\|U\|R\|LR\|u8R\|uR\|UR\)\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"\(sv\|s\|_\i*\)\=+ end='$' contains=cSpecial,cFormat,@Spell
 endif
 
+" C++ 17 extensions
+if !exists("cpp_no_cpp17")
+  syn match cppCast		"\<reinterpret_pointer_cast\s*<"me=e-1
+  syn match cppCast		"\<reinterpret_pointer_cast\s*$"
+  syn match cppFloat		display contained "\<0x\x*\.\x\+p[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppFloat		display contained "\<0x\x\+\.\=p[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+endif
+
 " C++ 20 extensions
 if !exists("cpp_no_cpp20")
   syn match cppNumber		display contained "\<0\(y\|d\)\>"
@@ -75,12 +83,6 @@ if !exists("cpp_no_cpp20")
   syn keyword cppStructure	concept
   syn keyword cppType		char8_t
   syn keyword cppModule		import module export
-endif
-
-" C++ 17 extensions
-if !exists("cpp_no_cpp17")
-  syn match cppCast		"\<reinterpret_pointer_cast\s*<"me=e-1
-  syn match cppCast		"\<reinterpret_pointer_cast\s*$"
 endif
 
 " The minimum and maximum operators in GNU C++
