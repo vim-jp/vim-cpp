@@ -103,26 +103,26 @@ endif
 syn match cppMinMax "[<>]?"
 
 " Default highlighting
-hi def link cppAccess		cppStatement
-hi def link cppCast		cppStatement
+hi def link cppAccess			cppStatement
+hi def link cppCast			cppStatement
 hi def link cppExceptions		Exception
-hi def link cppOperator		Operator
+hi def link cppOperator			Operator
 hi def link cppStatement		Statement
-hi def link cppModifier		Type
-hi def link cppType		Type
-hi def link cppStorageClass	StorageClass
+hi def link cppModifier			Type
+hi def link cppType			Type
+hi def link cppStorageClass		StorageClass
 hi def link cppStructure		Structure
-hi def link cppBoolean		Boolean
-hi def link cppCharacter	cCharacter
-hi def link cppSpecialCharacter	cSpecialCharacter
-hi def link cppSpecialError	cSpecialError
-hi def link cppConstant		Constant
+hi def link cppBoolean			Boolean
+hi def link cppCharacter		cCharacter
+hi def link cppSpecialCharacter		cSpecialCharacter
+hi def link cppSpecialError		cSpecialError
+hi def link cppConstant			Constant
 hi def link cppRawStringDelimiter	Delimiter
 hi def link cppRawString		String
-hi def link cppString		String
-hi def link cppNumber		Number
-hi def link cppFloat		Number
-hi def link cppModule		Include
+hi def link cppString			String
+hi def link cppNumber			Number
+hi def link cppFloat			Number
+hi def link cppModule			Include
 
 let b:current_syntax = "cpp"
 
