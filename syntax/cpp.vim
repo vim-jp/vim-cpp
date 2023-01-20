@@ -57,8 +57,8 @@ if !exists("cpp_no_cpp14")
   syn match cppNumber		display contained "\<0\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppNumber		display contained "\<[1-9]\('\=\d\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppNumber		display contained "\<0\('\=\o\+\)\+\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display contained "\<0b[01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppNumber		display contained "\<0x\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display contained "\<0[bB][01]\('\=[01]\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppNumber		display contained "\<0[xX]\x\('\=\x\+\)*\([Uu]\=\([Ll]\|LL\|ll\)\|\([Ll]\|LL\|ll\)\=[Uu]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\d\('\=\d\+\)*\.\(\d\('\=\d\+\)*\)\=\(e[-+]\=\d\+\)\=\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\.\d\('\=\d\+\)*\(e[-+]\=\d\+\)\=\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
   syn match cppFloat		display contained "\<\d\+e[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
@@ -69,8 +69,8 @@ endif
 if !exists("cpp_no_cpp17")
   syn match cppCast		"\<reinterpret_pointer_cast\s*<"me=e-1
   syn match cppCast		"\<reinterpret_pointer_cast\s*$"
-  syn match cppFloat		display contained "\<0x\x*\.\x\+p[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
-  syn match cppFloat		display contained "\<0x\x\+\.\=p[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppFloat		display contained "\<0[xX]\x*\.\x\+p[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
+  syn match cppFloat		display contained "\<0[xX]\x\+\.\=p[-+]\=\d\+\([FfLl]\|i[fl]\=\|h\|min\|s\|ms\|us\|ns\|_\i*\)\=\>"
 
   " TODO: push this up to c.vim if/when supported in C23
   syn match cppCharacter	"u8'[^\\]'"
@@ -92,8 +92,8 @@ if !exists("cpp_no_cpp20")
   syn match cppNumber		display contained "\<0\(y\|d\)\>"
   syn match cppNumber		display contained "\<[1-9]\('\=\d\+\)*\(y\|d\)\>"
   syn match cppNumber		display contained "\<0\o\+\(y\|d\)\>"
-  syn match cppNumber		display contained "\<0b[01]\('\=[01]\+\)*\(y\|d\)\>"
-  syn match cppNumber		display contained "\<0x\x\('\=\x\+\)*\(y\|d\)\>"
+  syn match cppNumber		display contained "\<0[bB][01]\('\=[01]\+\)*\(y\|d\)\>"
+  syn match cppNumber		display contained "\<0[xX]\x\('\=\x\+\)*\(y\|d\)\>"
   syn keyword cppStatement	co_await co_return co_yield requires
   syn keyword cppStorageClass	consteval constinit
   syn keyword cppStructure	concept
