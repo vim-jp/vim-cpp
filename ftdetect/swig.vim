@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.i,*.swg set filetype=swig
+autocmd BufNewFile,BufRead *.i,*.swg,*.swig set filetype=swig
