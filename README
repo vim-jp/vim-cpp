@@ -1,0 +1,3 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1615
+
+This is a syntax file for SWIG (Simplified Wrapper Interface Generator) description files.  The default syntax for .i files highlights comments in a reverse color scheme which is really horrible.  This syntax builds on vim's c++ syntax by adding highlighting for common swig directives and user defined directives.  For an alternative syntax, see  vimscript #1247 (which I found after writing this).  
