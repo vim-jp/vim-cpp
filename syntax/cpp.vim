@@ -99,6 +99,15 @@ if !exists("cpp_no_cpp20")
   syn keyword cppModule		import module export
 endif
 
+" C++ 23 extensions
+if !exists("cpp_no_cpp23")                                                                              
+  syn match cppNumber 	display contained "\<0\([Uu]\=[Zz]\|[Zz][Uu]\)\>"                           
+  syn match cppNumber 	display contained "\<[1-9]\('\=\d\+\)*\([Uu]\=[Zz]\|[Zz][Uu]\)\>"           
+  syn match cppNumber 	display contained "\<0\o\+\([Uu]\=[Zz]\|[Zz][Uu]\)\>"                       
+  syn match cppNumber 	display contained "\<0b[01]\('\=[01]\+\)*\([Uu]\=[Zz]\|[Zz][Uu]\)\>"        
+  syn match cppNumber 	display contained "\<0x\x\('\=\x\+\)*\([Uu]\=[Zz]\|[Zz][Uu]\)\>"            
+endif
+
 " The minimum and maximum operators in GNU C++
 syn match cppMinMax "[<>]?"
 
