@@ -1,5 +1,11 @@
 # vim-cpp
 
+## Archive Notice
+
+The files provided by this repository are now provided by Vim itself. Therefore, this repository is archived.
+
+---
+
 This is Vim syntax files with C++11 support. `c.vim` is based on Bram Moolenaar
 <Bram@vim.org> and `cpp.vim` is based on Ken Shan <ccshan@post.harvard.edu>.
 
